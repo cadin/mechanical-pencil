@@ -1,0 +1,73 @@
+{
+  "printResolution": 300,
+  "printHeightInches": 24,
+  "printWidthInches": 24,
+  
+  "layers": [
+    {
+    	"id": 0,
+		
+		"imageNames": [
+			"darkJellies/jellyfish3.png"
+		],
+		
+		"minScale": 0.2,
+		"maxScale": 0.3,
+		"imageAlpha": 100,
+		
+		"shouldRotate": true,
+		"rotationOffset": -60,
+		"rotateAroundCenter": false,
+		"rotationAmount": 60,
+		
+		"flipOnBothAxesOnly": false,
+		"shouldFlipX": false,
+		"shouldFlipY": false,
+		
+		"imagePoolSize": 5,
+		
+		"edgeMarginInches": 1,
+		"bleedMargins": false,
+		"constrainToImage": false,
+		
+		"containingCircleRadius": 0,
+		"avoidCenter": false,
+		"centerMarginInches": 0
+		
+    },
+    {
+		"id": 1,
+		
+		"imageNames": [
+			
+			"darkJellies/jellyfish3.png"
+		],
+		
+		"minScale": 0.4,
+		"maxScale": 0.7,
+		"imageAlpha": 100,
+		
+		"shouldRotate": true,
+		"rotationOffset": 0,
+		"rotateAroundCenter": false,
+		"rotationAmount": 10,
+		
+		"flipOnBothAxesOnly": false,
+		"shouldFlipX": false,
+		"shouldFlipY": false,
+		
+		"imagePoolSize": 3,
+		
+		"edgeMarginInches": 0,
+		"bleedMargins": false,
+		"constrainToImage": false,
+		
+		"containingCircleRadius": 9,
+		"avoidCenter": false,
+		"centerMarginInches": 2
+		
+      
+    }
+  ]
+  
+}

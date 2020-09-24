@@ -1,0 +1,3 @@
+enum ImageSize {
+	PREVIEW, FULL
+}

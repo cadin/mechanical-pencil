@@ -33,14 +33,17 @@ color bgColor = color(50);
 ImageSaver imgSaver = new ImageSaver();
 Editor editor;
 Document document = new Document();
-
+Menu menu = new Menu();
+boolean showMenu = false;
 
 HRect canvasBG;
 HText canvasDimensions;
 
 void settings() {
-	size(displayWidth, displayHeight - 45);
-	// fullScreen();
+	// -- use size() instead of fullScreen() to open in draggable window:
+	fullScreen();
+	// size(displayWidth, displayHeight - 45);
+	
 	pixelDensity(displayDensity()); // this has to be in settings!
 }
 
@@ -100,12 +103,14 @@ void draw(){
 		if(imgSaver.isBusy()) drawSaveIndicator();
 		imgSaver.update();
 		
-		// tint(255, 100);
-		// image(layers[0].layerMask, canvasX, canvasY);
-		// noTint();
-		// image(layers[1].imageMask, canvasX, canvasY);
+		if(showMenu){
+			menu.draw();
+		}
 	}
+	
 }
+
+
 
 void drawSaveIndicator() {
 	pushMatrix();
@@ -391,6 +396,11 @@ void keyPressed(){
 					clearCanvas();
 					noLoop();
 				}
+			break;
+			
+			case 'm' :
+				showMenu = !showMenu;
+				redraw();
 			break;
 		}
 	}	

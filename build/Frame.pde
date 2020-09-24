@@ -1,3 +1,4 @@
+// Data structure
 class Frame {
 	int width;
 	int height;

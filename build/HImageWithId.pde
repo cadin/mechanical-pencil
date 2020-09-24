@@ -1,3 +1,4 @@
+// add unique id field to HImage (from Hype framework)
 class HImageWithId extends HImage {
 	
 	int id = -1;

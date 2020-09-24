@@ -3,6 +3,8 @@ import hype.*;
 
 float MAX_SCREEN_SCALE = 0.245; // % - (0.2456 == macbook 1:1)
 float SCREEN_SCALE = 0.245; 
+
+// these will get overwritten when settings load
 float PRINT_W_INCHES = 5;
 float PRINT_H_INCHES = 5;
 int PRINT_RESOLUTION = 600;
@@ -33,6 +35,7 @@ color bgColor = color(50);
 ImageSaver imgSaver = new ImageSaver();
 Editor editor;
 Document document = new Document();
+
 Menu menu = new Menu();
 boolean showMenu = false;
 
@@ -48,7 +51,6 @@ void settings() {
 }
 
 void setup(){
-	
 	editor = new Editor(this, document);
 	
 	smooth();
@@ -66,8 +68,6 @@ void setup(){
 	// load the default config
 	loadSettings(SETTINGS_PATH);
 	loadConfigFile(configPath, ""); 
-	
-	createUILayer();
 }
 
 void updateCanvas() {
@@ -110,8 +110,6 @@ void draw(){
 	
 }
 
-
-
 void drawSaveIndicator() {
 	pushMatrix();
 		fill(color(200, 0, 0));
@@ -120,12 +118,7 @@ void drawSaveIndicator() {
 	popMatrix();
 }
 
-void createUILayer() {
-	
-}
-
 void calculateScreenScale() {
-	
 	float maxW = width - 100;
 	float maxH = height - 100;
 	
@@ -389,9 +382,6 @@ void keyPressed(){
 					loop();
 				} else {
 					editor.hide();
-					// PRINT_W_INCHES = editor.printW;
-					// PRINT_H_INCHES = editor.printH;
-					
 					updateCanvas();
 					clearCanvas();
 					noLoop();

@@ -1,3 +1,4 @@
+// This isn't really being used
 class Document {
 	
 	float widthInches;
@@ -14,3 +15,4 @@ class Document {
 	
 	float screenScale;
 }
+

@@ -466,23 +466,6 @@ class Layer {
 			
 		}
 		r += rotationOffset;
-
-		// float xPos = random(minX, maxX);
-		// float yPos = random(minY, maxY);
-
-		// BOUNDING BOX
-		// for debugging
-
-		// float screenW = w * SCREEN_SCALE;
-		// float screenH = h * SCREEN_SCALE;
-		// HRect b = new HRect(w * SCREEN_SCALE, h * SCREEN_SCALE);
-		// b
-		// 	.noFill()
-		// 	.stroke(0, 10)
-		// 	.loc( (xPos * SCREEN_SCALE) - screenW/2, (yPos * SCREEN_SCALE) - screenH/2)
-		// ;
-		// canvas.add(b);
-		
 		
 		d
 			.anchorAt(H.CENTER)
@@ -496,11 +479,8 @@ class Layer {
 	void randomize() {
 		if(constrainToImage && maskIsBlank) return;
 		
-		// pool.autoParent(canvas);
 		pool.requestAll();
 		for (HDrawable obj : pool) {
-			// println("obj");
-			// canvas.add(obj);
 			positionObject(obj);
 		}
 	}

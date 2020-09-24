@@ -4,6 +4,8 @@ class Menu {
 	int textX = 32;
 	
 	String[][] instructions = { 
+		{"1-9", "RANDOMIZE IMAGES TO LAYER #"},
+		{"SHIFT 1-9", "RESTAMP IMAGES TO LAYER #"},
 		{"E", "TOGGLE SETTINGS EDITOR"},
 		{"S", "SAVE PREVIEW IMAGE (+ DATA)"},
 		{"SHIFT S", "SAVE FULL SIZE IMAGE"},

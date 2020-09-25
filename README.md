@@ -1,6 +1,10 @@
 # mechanical-pencil
-A generative art system built in Processing (with Hype Framework).
-![Examples](exampleImages.png)
+A system for creating generative art built in Processing (with Hype Framework).
+
+![Example](banner.jpg)
+
+The software pulls in hand-drawn sketches of specific items and creates a dynamic, randomized arrangement based on a series of predefined rules. As more and more sketches are layered onto the canvas, the individual objects get lost in the complexity of the emerging patterns and textures.
+
 
 ## Getting Started
 
@@ -99,7 +103,61 @@ The width of your hi-res image in inches.
 An array of objects which describe settings for each layer in your sketch.
 
 ### Layer Settings
-WIP...
+**`imageNames`** (array)
+A list of one or more strings that define the paths to the images that will be used for this layer. Images are randomly pulled from this array so you won't always see every image, particularly if `imagePoolSize` is smaller than the number of images listed here.
+
+Image paths are relative to the project's `data/images/` folder.
+
+**`imagePoolSize`** (integer)   
+The number of images that will be added to the layer canvas each time the layer is randomized.
+
+**`minScale`** (number)  
+**`maxScale`** (number)  
+Images will be scaled by a random value between these minimum and maximum values.
+
+**`imageAlpha`** (integer)  
+The transparency value to be used for each image on this layer (0-255).
+
+**`shouldRotate`** (boolean)  
+Whether or not a random rotation should be applied to the images.
+
+**`rotationOffset`** (number)
+The default amount of rotation applied to each image (in degrees).
+
+**`rotationAmount`** (number)  
+The maximum amount of random rotation (in degrees) to be applied if `shouldRotate` is true.
+
+**`rotateAroundCenter`** (boolean)  
+Whether images on this layer should all be rotated around the center point of the canvas. Setting this to `true` overrides the `shouldRotate` and `rotationAmount` settings. `rotationOffset` will still be applied.
+
+**`shouldFlipX`** (boolean)
+**`shouldFlipY`** (boolean)
+Whether to allow the images to be flipped along the `x` and `y` axes.
+
+**`flipOnBothAxesOnly`** (boolean)
+Set to true to ensure that a flipped image never appears backwards. Useful for images that have text or other directionality.
+
+**`edgeMarginInches`** (number)   
+How much space (in inches) to leave around the canvas edges.
+
+**`bleedMargins`** (boolean)  
+Whether or not images should be allowed to extend into the margins. When set to `true`, image center points will be kept out of the margins, but the images themselves might extend into the margin area. 
+
+**`containingCircleRadius`** (number)  
+Instead of edge margins, specify a circular radius (in inches) within which images will be placed.
+
+
+**`avoidCenter`** (boolean)  
+When `true`, provide a `centerMarginInches` value to specify the size of the center area which should be left empty.
+
+**`centerMarginInches`** (number)  
+The radius (in inches) of the circular area at the center of the canvas which should be left empty. Set `avoidCenter` to use this value.
+
+**`constrainToImage`** (boolean)
+When set to `true`, provide a black and white image to use as a mask for image placement. Images in this layer will only appear in locations where the mask image is white.
+
+**`imageMaskName`** (string)  
+The path to the image mask to be used when `constrainToImage` is `true`. Path is relative to the `data/images/` folder.
 
 
 ## License

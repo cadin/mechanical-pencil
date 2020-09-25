@@ -52,21 +52,29 @@ Compositions can be saved from the app as print-quality images, or as smaller pr
 ### Key Commands
 
 **`1`-`9`**: Reposition images for the associated layer. Images are cumulative, so each key press adds more images to the composition. The number defined for `imagePoolSize` dictates how many images will appear for each key press.   
+
 Hold **`Shift`** while pressing the layer number to re-stamp the images in the same locations. This can emphasize a certain placement of images if the `imageAlpha` is less than 100%.  
+
 **`X`**: Clear the canvas.
 
 **`S`**: Save a preview image with associated data to the `output` folder.  
+
 **`SHIFT + S`**: Save a print-resolution image with associated data to the `output` folder.  
+
 **`C`**: Save the data file only (without image).  
 
 **`L`**: Load settings from a config or image data file.  
+
 **`SHIFT + L`**: Reconstitute a composition from a data file.  
+
 **`R`**: Reload data.  
+
 **`D`**: Reconstitute a composition from a data file **at double the original resolution**. 
 
 **`SHIFT + R`**: Start the [Render Queue](#render-queue).
 
 **`E`**: Toggle the settings editor.  
+
 **`M`**: Toggle the Key Commands Menu.
 
 ### Render Queue

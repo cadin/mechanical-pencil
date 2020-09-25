@@ -48,6 +48,7 @@ There are many more configuration options available. See the [included config fi
 Project images should be placed in the `data/images` folder. Subfolders are ok.
 Transparent PNGs will work best.
 
+
 ## Usage
 The app works by randomly placing copies of your image onto the canvas. The parameters defined in your configuration dictate the rules for placement and randomization.
 
@@ -81,10 +82,12 @@ Hold **`Shift`** while pressing the layer number to re-stamp the images in the s
 
 **`M`**: Toggle the Key Commands Menu.
 
+
 ### Render Queue
 Saving large, complex compositions at print-resolution can sometimes be slow. My preferred workflow is to save smaller preview images (`s` key) while I'm working and reconstitute them from the data files later to export the full size images.
 
 To automate this process, place the data files for your images in the `data/renderQueue` folder, run the sketch and press `SHIFT + R` to sequentially process the files, saving a print-resolution image for each data file.
+
 
 
 ## Config Options
@@ -130,11 +133,11 @@ The maximum amount of random rotation (in degrees) to be applied if `shouldRotat
 **`rotateAroundCenter`** (boolean)  
 Whether images on this layer should all be rotated around the center point of the canvas. Setting this to `true` overrides the `shouldRotate` and `rotationAmount` settings. `rotationOffset` will still be applied.
 
-**`shouldFlipX`** (boolean)
-**`shouldFlipY`** (boolean)
+**`shouldFlipX`** (boolean)  
+**`shouldFlipY`** (boolean)  
 Whether to allow the images to be flipped along the `x` and `y` axes.
 
-**`flipOnBothAxesOnly`** (boolean)
+**`flipOnBothAxesOnly`** (boolean)  
 Set to true to ensure that a flipped image never appears backwards. Useful for images that have text or other directionality.
 
 **`edgeMarginInches`** (number)   
@@ -153,7 +156,7 @@ When `true`, provide a `centerMarginInches` value to specify the size of the cen
 **`centerMarginInches`** (number)  
 The radius (in inches) of the circular area at the center of the canvas which should be left empty. Set `avoidCenter` to use this value.
 
-**`constrainToImage`** (boolean)
+**`constrainToImage`** (boolean)  
 When set to `true`, provide a black and white image to use as a mask for image placement. Images in this layer will only appear in locations where the mask image is white.
 
 **`imageMaskName`** (string)  

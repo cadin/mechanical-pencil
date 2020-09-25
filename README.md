@@ -165,4 +165,4 @@ The path to the image mask to be used when `constrainToImage` is `true`. Path is
 
 ## License
 
-This project is licensed under the Unlicense - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the Unlicense - see the [LICENSE](LICENSE) file for details.

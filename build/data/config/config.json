@@ -5,7 +5,7 @@
   
   "layers": [
     {
-    	"id": 0,
+
 		
 		"imageNames": [
 			"darkJellies/jellyfish3.png"
@@ -18,7 +18,7 @@
 		"shouldRotate": true,
 		"rotationOffset": -60,
 		"rotateAroundCenter": false,
-		"rotationAmount": 60,
+		"rotationAmount": 180,
 		
 		"flipOnBothAxesOnly": false,
 		"shouldFlipX": false,
@@ -36,10 +36,9 @@
 		
     },
     {
-		"id": 1,
+
 		
 		"imageNames": [
-			
 			"darkJellies/jellyfish3.png"
 		],
 		

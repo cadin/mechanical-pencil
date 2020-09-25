@@ -18,7 +18,7 @@ class Layer {
 	boolean rotateAroundCenter = false;
 	float rotationOffset = 0;
 	float containingCircleRadius = 0;
-	float rotationAmount = 0;
+	float rotationAmount = 360.0;
 
 	FloatList xScales = new FloatList();
 	FloatList yScales = new FloatList();
@@ -178,48 +178,43 @@ class Layer {
 			imageNames = parseImageNames(settings.getJSONArray("imageNames"));
 		}
 		
-		imageAlpha = settings.getInt("imageAlpha");
-		minScale = settings.getFloat("minScale");
-		maxScale = settings.getFloat("maxScale");
+		if(!settings.isNull("imageAlpha")){
+			imageAlpha = settings.getInt("imageAlpha");
+		}
 		
-		if(settings.isNull("avoidCenter")){
-			avoidCenter = false;
-		} else {
+		if(!settings.isNull("minScale")){ minScale = settings.getFloat("minScale"); }
+		if(!settings.isNull("maxScale")){ maxScale = settings.getFloat("maxScale"); }
+		
+		if(!settings.isNull("avoidCenter")){
 			avoidCenter = settings.getBoolean("avoidCenter");
 		}
 		
-		if(settings.isNull("shouldFlipX")){
-			// handle typo in older data files
-			shouldFlipX = settings.getBoolean("sholdFlipX");
-		} else {
-			shouldFlipX = settings.getBoolean("shouldFlipX");
-		}
+		if(!settings.isNull("shouldFlipX")){ shouldFlipX = settings.getBoolean("shouldFlipX"); }
+		if(!settings.isNull("shouldFlipY")) { shouldFlipY = settings.getBoolean("shouldFlipY"); }
 		
 		if(!settings.isNull("flipOnBothAxesOnly")){
 			flipOnBothAxesOnly = settings.getBoolean("flipOnBothAxesOnly");
 		}
 		
-		shouldFlipY = settings.getBoolean("shouldFlipY");
-		shouldRotate = settings.getBoolean("shouldRotate");
-		rotateAroundCenter = settings.getBoolean("rotateAroundCenter");
-		rotationOffset = settings.getFloat("rotationOffset");
 		
-		if(settings.isNull("rotationAmount")){
-			rotationAmount = 360.0;
-		} else {
+		if(!settings.isNull("shouldRotate")) { shouldRotate = settings.getBoolean("shouldRotate"); }
+		if(!settings.isNull("rotateAroundCenter")) { rotateAroundCenter = settings.getBoolean("rotateAroundCenter"); }
+		if(!settings.isNull("rotationOffset")) { rotationOffset = settings.getFloat("rotationOffset"); }
+		
+		if(!settings.isNull("rotationAmount")){
 			rotationAmount = settings.getFloat("rotationAmount");
 		}
 		
-		edgeMargin = settings.getFloat("edgeMarginInches");
-		centerMargin = settings.getFloat("centerMarginInches");
-		bleedMargins = settings.getBoolean("bleedMargins");
-		containingCircleRadius = settings.getFloat("containingCircleRadius");
+		if(!settings.isNull("edgeMarginInches")){ edgeMargin = settings.getFloat("edgeMarginInches"); }
+		if(!settings.isNull("centerMarginInches")){centerMargin = settings.getFloat("centerMarginInches"); }
+		if(!settings.isNull("bleedMargins")){bleedMargins = settings.getBoolean("bleedMargins"); }
+		if(!settings.isNull("containingCircleRadius")){containingCircleRadius = settings.getFloat("containingCircleRadius"); }
 		
-		if(settings.isNull("imagePoolSize")){
+		if(!settings.isNull("imagePoolMin")){
 			int poolMin = settings.getInt("imagePoolMin");
 			int poolMax = settings.getInt("imagePoolMax");
 			poolSize = (int)random(poolMin, poolMax);
-		} else {
+		} else if(!settings.isNull("imagePoolSize")) {
 			poolSize = settings.getInt("imagePoolSize");
 		}
 		
